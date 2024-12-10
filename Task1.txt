@@ -1,0 +1,373 @@
+/*MongoDB task*/
+
+// create a database
+
+use zen_class_programme
+
+
+// Create Collections
+
+db.createCollection("users")
+db.createCollection("codekata")
+db.createCollection("attendance")
+db.createCollection("topics")
+db.createCollection("tasks")
+db.createCollection("company_drives")
+db.createCollection("mentors")
+
+
+
+// inser data into users
+
+db.users.insertMany([
+  { name: "A", email: "A@example.com" },
+  { name: "B", email: "B@example.com" },
+  { name: "C", email: "C@example.com" },
+  { name: "D", email: "D@example.com"},
+  { name: "E", email: "E@example.com"}
+]);
+
+
+
+//inser data into codekata
+
+
+db.codekata.insertMany([
+  { user_id: 1, problems_solved: 120 },
+  { user_id: 2, problems_solved: 200 },
+  { user_id: 3, problems_solved: 150 },
+  { user_id: 4, problems_solved: 90 },
+  { user_id: 5, problems_solved: 70 }
+]);
+
+
+
+
+// inser data into attendance
+
+
+db.attendance.insertMany([
+  { user_id: 1, date: "2020-10-15", status: "present" },
+  { user_id: 1, date: "2020-10-16", status: "present" },
+  { user_id: 1, date: "2020-10-17", status: "present" },
+  { user_id: 1, date: "2020-10-18", status: "present" },
+  { user_id: 1, date: "2020-10-19", status: "present" },
+  { user_id: 1, date: "2020-10-20", status: "absent" },
+  { user_id: 1, date: "2020-10-21", status: "present" },
+  { user_id: 1, date: "2020-10-22", status: "absent" },
+  { user_id: 1, date: "2020-10-23", status: "present" },
+  { user_id: 1, date: "2020-10-24", status: "present" },
+  { user_id: 1, date: "2020-10-25", status: "present" },
+  { user_id: 1, date: "2020-10-26", status: "absent" },
+  { user_id: 1, date: "2020-10-27", status: "present" },
+  { user_id: 1, date: "2020-10-28", status: "absent" },
+  { user_id: 1, date: "2020-10-29", status: "present" },
+  { user_id: 1, date: "2020-10-30", status: "present" },
+  
+  { user_id: 2, date: "2020-10-15", status: "absent" },
+  { user_id: 2, date: "2020-10-16", status: "present" },
+  { user_id: 2, date: "2020-10-17", status: "present" },
+  { user_id: 2, date: "2020-10-18", status: "present" },
+  { user_id: 2, date: "2020-10-19", status: "present" },
+  { user_id: 2, date: "2020-10-20", status: "present" },
+  { user_id: 2, date: "2020-10-21", status: "present" },
+  { user_id: 2, date: "2020-10-22", status: "present" },
+  { user_id: 2, date: "2020-10-23", status: "absent" },
+  { user_id: 2, date: "2020-10-24", status: "present" },
+  { user_id: 2, date: "2020-10-25", status: "present" },
+  { user_id: 2, date: "2020-10-26", status: "present" },
+  { user_id: 2, date: "2020-10-27", status: "present" },
+  { user_id: 2, date: "2020-10-28", status: "present" },
+  { user_id: 2, date: "2020-10-29", status: "absent" },
+  { user_id: 2, date: "2020-10-30", status: "present" },
+
+  { user_id: 3, date: "2020-10-15", status: "present" },
+  { user_id: 3, date: "2020-10-16", status: "present" },
+  { user_id: 3, date: "2020-10-17", status: "present" },
+  { user_id: 3, date: "2020-10-18", status: "absent" },
+  { user_id: 3, date: "2020-10-19", status: "present" },
+  { user_id: 3, date: "2020-10-20", status: "present" },
+  { user_id: 3, date: "2020-10-21", status: "present" },
+  { user_id: 3, date: "2020-10-22", status: "present" },
+  { user_id: 3, date: "2020-10-23", status: "present" },
+  { user_id: 3, date: "2020-10-24", status: "absent" },
+  { user_id: 3, date: "2020-10-25", status: "present" },
+  { user_id: 3, date: "2020-10-26", status: "present" },
+  { user_id: 3, date: "2020-10-27", status: "present" },
+  { user_id: 3, date: "2020-10-28", status: "present" },
+  { user_id: 3, date: "2020-10-29", status: "present" },
+  { user_id: 3, date: "2020-10-30", status: "absent" },
+
+  { user_id: 4, date: "2020-10-15", status: "present" },
+  { user_id: 4, date: "2020-10-16", status: "present" },
+  { user_id: 4, date: "2020-10-17", status: "present" },
+  { user_id: 4, date: "2020-10-18", status: "present" },
+  { user_id: 4, date: "2020-10-19", status: "present" },
+  { user_id: 4, date: "2020-10-20", status: "present" },
+  { user_id: 4, date: "2020-10-21", status: "absent" },
+  { user_id: 4, date: "2020-10-22", status: "present" },
+  { user_id: 4, date: "2020-10-23", status: "absent" },
+  { user_id: 4, date: "2020-10-24", status: "present" },
+  { user_id: 4, date: "2020-10-25", status: "present" },
+  { user_id: 4, date: "2020-10-26", status: "present" },
+  { user_id: 4, date: "2020-10-27", status: "present" },
+  { user_id: 4, date: "2020-10-28", status: "present" },
+  { user_id: 4, date: "2020-10-29", status: "present" },
+  { user_id: 4, date: "2020-10-30", status: "present" },
+
+  { user_id: 5, date: "2020-10-15", status: "present" },
+  { user_id: 5, date: "2020-10-16", status: "present" },
+  { user_id: 5, date: "2020-10-17", status: "present" },
+  { user_id: 5, date: "2020-10-18", status: "present" },
+  { user_id: 5, date: "2020-10-19", status: "present" },
+  { user_id: 5, date: "2020-10-20", status: "present" },
+  { user_id: 5, date: "2020-10-21", status: "present" },
+  { user_id: 5, date: "2020-10-22", status: "present" },
+  { user_id: 5, date: "2020-10-23", status: "present" },
+  { user_id: 5, date: "2020-10-24", status: "present" },
+  { user_id: 5, date: "2020-10-25", status: "present" },
+  { user_id: 5, date: "2020-10-26", status: "present" },
+  { user_id: 5, date: "2020-10-27", status: "present" },
+  { user_id: 5, date: "2020-10-28", status: "present" },
+  { user_id: 5, date: "2020-10-29", status: "present" },
+  { user_id: 5, date: "2020-10-30", status: "present" }
+]);
+
+
+
+// insert data into topics
+
+
+db.topics.insertMany([
+  { topic_name: "JavaScript", date: "2020-09-15" },
+  { topic_name: "JavaScript", date: "2020-09-20" },
+  { topic_name: "JavaScript", date: "2020-09-29" },
+  { topic_name: "JavaScript", date: "2020-10-05" },
+  { topic_name: "React", date: "2020-10-15" },
+  { topic_name: "React", date: "2020-10-20" },
+  { topic_name: "React", date: "2020-10-23" },
+  { topic_name: "React", date: "2020-10-26" },
+  { topic_name: "Mysql", date: "2020-10-27" },
+  { topic_name: "Mysql", date: "2020-10-29" },
+  { topic_name: "Mysql", date: "2020-10-31" },
+  { topic_name: "Mysql", date: "2020-11-12" },
+  { topic_name: "MongoDB", date: "2020-11-14" },
+  { topic_name: "MongoDB", date: "2020-11-20" },
+  { topic_name: "nodejs", date: "2020-11-22" },
+  { topic_name: "nodejs", date: "2020-11-25" },
+  { topic_name: "nodejs", date: "2020-11-30" }
+]);
+
+
+
+// insert data into tasks
+
+db.tasks.insertMany([
+  {
+    name: "Task1",
+    date: "2020-10-15",
+    users_status: [
+      { user_id: ObjectId("6757ff08a5e889fcce1f4afe"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4aff"), submitted: false },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b00"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b01"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b02"), submitted: false }
+    ]
+  },
+  {
+    name: "Task2",
+    date: "2020-10-16",
+    users_status: [
+      { user_id: ObjectId("6757ff08a5e889fcce1f4afe"), submitted: false },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4aff"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b00"), submitted: false },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b01"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b02"), submitted: true }
+    ]
+  },
+  {
+    name: "Task3",
+    date: "2020-10-17",
+    users_status: [
+      { user_id: ObjectId("6757ff08a5e889fcce1f4afe"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4aff"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b00"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b01"), submitted: false },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b02"), submitted: true }
+    ]
+  },
+  {
+    name: "Task4",
+    date: "2020-10-18",
+    users_status: [
+      { user_id: ObjectId("6757ff08a5e889fcce1f4afe"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4aff"), submitted: false },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b00"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b01"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b02"), submitted: false }
+    ]
+  },
+  {
+    name: "Task5",
+    date: "2020-10-19",
+    users_status: [
+      { user_id: ObjectId("6757ff08a5e889fcce1f4afe"), submitted: false },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4aff"), submitted: false },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b00"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b01"), submitted: true },
+      { user_id: ObjectId("6757ff08a5e889fcce1f4b02"), submitted: false }
+    ]
+  }
+]);
+
+
+
+// Insert data into company drives
+
+
+db.company_drives.insertMany([
+  { company_name: "TechCorp", date: "2020-09-15", students_appeared: [1, 2, 3] },
+  { company_name: "InnoSoft", date: "2020-09-16",  students_appeared: [1, 4, 5] },
+  { company_name: "Cloudify", date: "2020-09-17", students_appeared: [1, 5] },
+  { company_name: "AlphaTech", date: "2020-09-18", students_appeared: [3, 5]},
+  { company_name: "DataWorks", date: "2020-09-19", students_appeared: [ 3, 4, 5]},
+  { company_name: "CodeLabs", date: "2020-10-20",  students_appeared: [4,5]},
+  { company_name: "WebMaster", date: "2020-10-21", students_appeared: [1, 2, 5]},
+  { company_name: "TechTribe", date: "2020-10-22",  students_appeared: [1, 4]},
+  { company_name: "XyzTech", date: "2020-10-23" ,  students_appeared: [2, 3]},
+  { company_name: "MegaTech", date: "2020-10-24", students_appeared: [2, 4]},
+  { company_name: "FutureSolutions", date: "2020-10-25", students_appeared: [1, 3, 4, 5] },
+  { company_name: "NexGen", date: "2020-11-26", students_appeared: [1, 2, 4, 5] },
+  { company_name: "CleverTech", date: "2020-11-27", students_appeared: [1, 2, 3, 5]},
+  { company_name: "Techie", date: "2020-11-28",  students_appeared: [1, 2, 3, 4]},
+  { company_name: "GlobalTech", date: "2020-11-29", students_appeared: [3, 2, 4, 5]},
+  { company_name: "CodeForce", date: "2020-11-30", students_appeared: [1, 3, 4]},
+  { company_name: "SmartTech", date: "2020-11-31", students_appeared: [1, 2, 3, 4, 5]}
+]);
+
+
+
+//insert data into mentors
+
+db.mentors.insertMany([
+  { name: "Mentor1", mentees_count: 10 },
+  { name: "Mentor2", mentees_count: 20 },
+  { name: "Mentor3", mentees_count: 25 }
+]);
+
+
+
+/*Queries*/
+
+
+//Find all the topics and tasks which are thought in the month of October
+
+db.topics.find({ date: { $gte: "2020-10-01", $lte: "2020-10-31" } });
+db.tasks.find({ date: { $gte: "2020-10-01", $lte: "2020-10-31" } });
+
+
+//Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+
+db.company_drives.find({ date: { $gte: "2020-10-15", $lte: "2020-10-31" } });
+
+
+//Find all the company drives and students who are appeared for the placement.
+
+db.company_drives.aggregate([
+  {
+    $lookup: {
+      from: "users",
+      localField: "students_appeared",
+      foreignField: "_id",
+      as: "students"
+    }
+  }
+]);
+
+
+//Find the number of problems solved by the user in codekata
+
+db.codekata.aggregate([
+  {
+    $group: {
+      _id: "$user_id",
+      total_problems_solved: { $sum: "$problems_solved" }
+    }
+  }
+]);
+
+
+
+//Find all the mentors with who has the mentee's count more than 15
+
+db.mentors.find({ mentees_count: { $gt: 15 } });
+
+
+
+//Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+
+db.tasks.aggregate([
+  {
+    $facet: {
+      // Step 1: Find absent users between 15th October and 31st October
+
+      absentUsers: [
+        {
+          $lookup: {
+            from: "attendance",
+            let: { task_date: "$date" },
+            pipeline: [
+              {
+                $match: {
+                  $expr: {
+                    $and: [
+                      { $gte: ["$date", ISODate("2020-10-15T00:00:00Z")] },
+                      { $lte: ["$date", ISODate("2020-10-31T23:59:59Z")] }
+                    ]
+                  },
+                  status: "absent"
+                }
+              },
+              { $project: { user_id: 1 } }
+            ],
+            as: "absent_users"
+          }
+        },
+        { $unwind: "$absent_users" },
+        { $project: { user_id: "$absent_users.user_id" } }
+      ],
+
+      // Step 2: Find users who did not submit tasks between 15th October and 31st October
+
+      notSubmittedUsers: [
+        {
+          $unwind: "$users_status"
+        },
+        {
+          $match: { "users_status.submitted": false }
+        },
+        {
+          $project: { user_id: "$users_status.user_id" }
+        }
+      ]
+    }
+  },
+  {
+    $project: {
+      // Step 3: Combine both lists and remove duplicates
+      
+      combinedUsers: {
+        $setUnion: ["$absentUsers", "$notSubmittedUsers"]
+      }
+    }
+  },
+  {
+    $unwind: "$combinedUsers"
+  },
+  {
+    $group: {
+      _id: "$combinedUsers.user_id"
+    }
+  },
+  { $count: "total_users" }
+]);
